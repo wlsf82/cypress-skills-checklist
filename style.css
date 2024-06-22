@@ -6,6 +6,7 @@
   --container-bg-color: #fff;
   --border-color: #eee;
   --accent-color: #1a73e8;
+  --header-height: 70px; /* Adjust this value to match your header's actual height */
 }
 
 [data-theme="dark"] {
@@ -24,20 +25,31 @@ body {
   margin: 0;
   padding: 20px;
   color: var(--text-color);
+  padding-top: 70px; /* Adjust this value based on your header's height */
   padding-bottom: 60px; /* Add bottom padding to body to ensure content is not hidden by the footer */
 }
 
 /* Header styling */
 header {
-  background-color: var(--container-bg-color);
-  border-color: var(--border-color);
-  padding: 20px;
-  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure header is above other content */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: var(--container-bg-color); /* Use variable for background to maintain theme consistency */
+  padding: 20px 0; /* Add vertical padding for alignment */
+  text-align: center; /* Center the text horizontally */
+}
+
+header h1, header p {
+  margin: 0 auto; /* Center content horizontally */
+  display: block; /* Ensure block-level for proper text alignment */
+  width: fit-content; /* Adjust width to the content size */
+  padding-bottom: 10px;
 }
 
 header h1 {
-  margin: 0;
   color: var(--accent-color);
 }
 
@@ -50,7 +62,7 @@ main {
   background-color: var(--container-bg-color);
   border-color: var(--border-color);
   padding: 20px;
-  margin-top: 20px;
+  margin-top: var(--header-height); /* This should be at least the height of the header */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -87,6 +99,7 @@ footer {
   width: 100%;
   text-align: center;
   padding: 10px 20px;
+  padding-top: 10px;
   background-color: var(--container-bg-color);
   border-color: var(--border-color);
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
@@ -115,15 +128,14 @@ footer p {
   transform: scale(1.5);
 }
 
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   body {
-    padding: 10px;
+    padding-top: 60px; /* Adjusted for smaller header on mobile */
   }
 
   header, main, footer {
-    padding: 15px;
+    padding: 15px 10px; /* Smaller padding for mobile */
   }
 
   li {
