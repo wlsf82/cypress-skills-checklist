@@ -142,10 +142,6 @@ footer p {
     padding: 15px 10px; /* Smaller padding for mobile */
   }
 
-  h1 span {
-    display: none;
-  }
-
   li {
     padding: 8px;
   }
