@@ -1,0 +1,22 @@
+{
+  "name": "cypress-skills-checklist",
+  "version": "1.0.0",
+  "description": "Checklist para avaliação de habilidades em desenvolvimento de testes automatizados com Cypress.",
+  "scripts": {
+    "cy:open": "cypress open",
+    "test": "cypress run",
+    "test:prod": "cypress run --env environment=prod"
+  },
+  "keywords": [
+    "cypress",
+    "talking-about-testing",
+    "test-design-masterclass",
+    "test-design-masterclass-tat",
+    "testing"
+  ],
+  "author": "Walmyr <wlsf82@gmail.com> (https://walmyr.dev/)",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}
