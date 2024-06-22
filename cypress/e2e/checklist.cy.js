@@ -7,13 +7,14 @@ describe('Cypress Skills Checklist', () => {
     }
   })
 
-  context('Perncentages', () => {
-    it('checking one checkbox changes the percentage from zero to something else', () => {
+  context('Footer', () => {
+    it('checking one checkbox changes the counter from zero to one', () => {
+      cy.contains('footer', '0 /').should('be.visible')
       cy.contains('footer', '0%').should('be.visible')
 
       cy.get('main input[type="checkbox"]').first().check()
 
-      cy.contains('footer', '%)').should('be.visible')
+      cy.contains('footer', '1 /').should('be.visible')
       cy.contains('footer', '0%').should('not.exist')
     })
 
