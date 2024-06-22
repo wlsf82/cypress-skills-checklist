@@ -17,10 +17,10 @@ describe('Cypress Skills Checklist', () => {
       cy.contains('footer', '0%').should('not.exist')
     })
 
-    it('checking all checkboxes leads to 100% completion and advanced - Sr. level', () => {
+    it('checking all checkboxes leads to 100% completion and DevOps level', () => {
       cy.get('input[type="checkbox"]').check()
 
-      cy.contains('footer', '(100%) - Nível de habilidade: Avançado (Sr.)').should('be.visible')
+      cy.contains('footer', '(100%) - Nível de habilidade: DevOps').should('be.visible')
     })
   })
 

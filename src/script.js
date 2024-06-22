@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
       skillLevelElement.textContent = 'Iniciante (Jr.)'
     } else if (percentage >= 50 && percentage < 75) {
       skillLevelElement.textContent = 'Intermediário (Pleno)'
-    } else {
+    } else if (percentage >= 75 && percentage < 95) {
       skillLevelElement.textContent = 'Avançado (Sr.)'
+    } else {
+      skillLevelElement.textContent = 'DevOps'
     }
   }
 
