@@ -6,7 +6,7 @@
   --container-bg-color: #fff;
   --border-color: #eee;
   --accent-color: #1a73e8;
-  --header-height: 70px; /* Adjust this value to match your header's actual height */
+  --header-height: 70px;
 }
 
 [data-theme="dark"] {
@@ -15,7 +15,7 @@
   --secondary-text-color: #aaa;
   --container-bg-color: #242424;
   --border-color: #444;
-  --accent-color: #1a73e8; /* Keep the accent color consistent or change if needed */
+  --accent-color: #1a73e8;
 }
 
 /* Overall body styling */
@@ -25,7 +25,7 @@ body {
   margin: 0;
   padding: 20px;
   color: var(--text-color);
-  padding-top: 70px; /* Adjust this value based on your header's height */
+  padding-top: 70px;
   padding-bottom: 60px; /* Add bottom padding to body to ensure content is not hidden by the footer */
 }
 
@@ -39,7 +39,7 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   background-color: var(--container-bg-color); /* Use variable for background to maintain theme consistency */
   padding: 20px 0; /* Add vertical padding for alignment */
-  text-align: center; /* Center the text horizontally */
+  text-align: center;
 }
 
 header h1, header p {
@@ -113,13 +113,13 @@ footer p {
 
 /* Style for the theme toggle button */
 #themeToggle {
-  background: none;    /* No background color */
-  border: none;        /* Remove border */
+  background: none;
+  border: none;
   color: var(--text-color); /* Use the text color from theme */
-  font-size: 24px;     /* Set a suitable font size for visibility */
-  cursor: pointer;     /* Cursor changes to pointer to indicate it's clickable */
-  padding: 5px;        /* Padding to increase clickable area */
-  margin: 0;           /* Remove any default margin */
+  font-size: 24px; /* Set a suitable font size for visibility */
+  cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
+  padding: 5px; /* Padding to increase clickable area */
+  margin: 0; /* Remove any default margin */
   transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
@@ -131,11 +131,11 @@ footer p {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   :root {
-    --header-height: 100px;  /* Example: Adjust this based on actual measured header height on small devices */
+    --header-height: 100px;
   }
 
   body {
-    padding-top: var(--header-height);  /* Make sure body padding-top is also using this variable */
+    padding-top: var(--header-height); /* Make sure body padding-top is also using this variable */
   }
 
   header, main, footer {
