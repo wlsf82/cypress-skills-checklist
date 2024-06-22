@@ -30,7 +30,7 @@ describe('Cypress Skills Checklist', () => {
       cy.get('[data-theme="light"]').should('exist')
     })
 
-    it('changes to the dark mode than back to light', () => {
+    it('changes to the dark mode then back to light', () => {
       cy.get('button[aria-label^="Mudar para o tema"]')
         .as('themeToggleButton')
         .click()
