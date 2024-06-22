@@ -130,8 +130,12 @@ footer p {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  :root {
+    --header-height: 100px;  /* Example: Adjust this based on actual measured header height on small devices */
+  }
+
   body {
-    padding-top: 60px; /* Adjusted for smaller header on mobile */
+    padding-top: var(--header-height);  /* Make sure body padding-top is also using this variable */
   }
 
   header, main, footer {
