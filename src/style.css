@@ -142,6 +142,10 @@ footer p {
     padding: 15px 10px; /* Smaller padding for mobile */
   }
 
+  #themeToggle:hover {
+    transform: none;
+  }
+
   li {
     padding: 8px;
   }
