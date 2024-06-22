@@ -38,7 +38,7 @@ header {
   z-index: 1000; /* Ensure header is above other content */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   background-color: var(--container-bg-color); /* Use variable for background to maintain theme consistency */
-  padding: 20px 0; /* Add vertical padding for alignment */
+  padding: 20px 0 0 0; /* Add vertical padding for alignment */
   text-align: center;
 }
 
@@ -131,7 +131,7 @@ footer p {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   :root {
-    --header-height: 100px;
+    --header-height: 90px;
   }
 
   body {
@@ -140,6 +140,10 @@ footer p {
 
   header, main, footer {
     padding: 15px 10px; /* Smaller padding for mobile */
+  }
+
+  h1 span {
+    display: none;
   }
 
   li {
