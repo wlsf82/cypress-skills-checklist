@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update skill level based on percentage
     if (percentage < 50) {
-      skillLevelElement.textContent = 'Beginner'
+      skillLevelElement.textContent = 'Iniciante (Jr.)'
     } else if (percentage >= 50 && percentage < 75) {
-      skillLevelElement.textContent = 'Intermediate'
+      skillLevelElement.textContent = 'Intermediário (Pleno)'
     } else {
-      skillLevelElement.textContent = 'Advanced'
+      skillLevelElement.textContent = 'Avançado (Sr.)'
     }
   }
 
@@ -30,3 +30,24 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial update on page load
   updateCheckboxCounts()
 })
+
+// Check for saved user theme preference, if any, and apply it
+document.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light theme
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateToggleButton(savedTheme); // Set the button text based on the saved theme
+});
+
+document.getElementById('themeToggle').addEventListener('click', function() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateToggleButton(newTheme); // Update the button text based on the new theme
+});
+
+function updateToggleButton(theme) {
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.textContent = theme === 'dark' ? '☀' : '☽'; // Set text as sun for light mode, moon for dark mode
+  themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'); // Accessibility improvement
+}

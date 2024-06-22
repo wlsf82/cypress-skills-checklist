@@ -1,0 +1,132 @@
+/* Define CSS variables for light and dark themes */
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --container-bg-color: #fff;
+  --border-color: #eee;
+  --accent-color: #1a73e8;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #fff;
+  --secondary-text-color: #aaa;
+  --container-bg-color: #242424;
+  --border-color: #444;
+  --accent-color: #1a73e8; /* Keep the accent color consistent or change if needed */
+}
+
+/* Overall body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+  color: var(--text-color);
+  padding-bottom: 60px; /* Add bottom padding to body to ensure content is not hidden by the footer */
+}
+
+/* Header styling */
+header {
+  background-color: var(--container-bg-color);
+  border-color: var(--border-color);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--accent-color);
+}
+
+header p {
+  color: var(--secondary-text-color);
+}
+
+/* Main content area */
+main {
+  background-color: var(--container-bg-color);
+  border-color: var(--border-color);
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* List styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  border-bottom: 1px solid #eee;
+  border-bottom-color: var(--border-color);
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+/* Checkbox styles */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Label styling to improve click area and usability */
+label {
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  display: block; /* Makes the label more clickable */
+}
+
+/* Footer styling for fixed position */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 20px;
+  background-color: var(--container-bg-color);
+  border-color: var(--border-color);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  z-index: 1000; /* Make sure footer stays above all other content */
+}
+
+footer p {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+/* Style for the theme toggle button */
+#themeToggle {
+  background: none;    /* No background color */
+  border: none;        /* Remove border */
+  color: var(--text-color); /* Use the text color from theme */
+  font-size: 24px;     /* Set a suitable font size for visibility */
+  cursor: pointer;     /* Cursor changes to pointer to indicate it's clickable */
+  padding: 5px;        /* Padding to increase clickable area */
+  margin: 0;           /* Remove any default margin */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect to give feedback on interaction */
+#themeToggle:hover {
+  transform: scale(1.5);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header, main, footer {
+    padding: 15px;
+  }
+
+  li {
+    padding: 8px;
+  }
+}
