@@ -8,7 +8,7 @@ describe('Cypress Skills Checklist', () => {
   })
 
   context('Perncentages', () => {
-    it('checking one checkbox changes the percentage from zero to something', () => {
+    it('checking one checkbox changes the percentage from zero to something else', () => {
       cy.contains('footer', '0%').should('be.visible')
 
       cy.get('main input[type="checkbox"]').first().check()
