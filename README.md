@@ -1,5 +1,7 @@
 # cypress-skills-checklist
 
+[![CI/CD](https://github.com/wlsf82/cypress-skills-checklist/actions/workflows/cicd.yml/badge.svg)](https://github.com/wlsf82/cypress-skills-checklist/actions)
+
 Checklist para avaliação de habilidades em desenvolvimento de testes automatizados com Cypress.
 
 ___
