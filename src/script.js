@@ -49,6 +49,6 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 
 function updateToggleButton(theme) {
   const themeToggle = document.getElementById('themeToggle')
-  themeToggle.textContent = theme === 'dark' ? '☀' : '☽' // Set text as sun for light mode, moon for dark mode
+  themeToggle.textContent = theme === 'dark' ? '☀' : '☽' // Set text as sun for light mode or moon for dark mode
   themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Mudar para o tema claro' : 'Mudar para o tema escuro') // Accessibility improvement
 }
