@@ -6,7 +6,7 @@
   --container-bg-color: #fff;
   --border-color: #eee;
   --accent-color: #1a73e8;
-  --header-height: 70px;
+  --header-height: 88px;
 }
 
 [data-theme="dark"] {
@@ -61,8 +61,9 @@ header p {
 main {
   background-color: var(--container-bg-color);
   border-color: var(--border-color);
-  padding: 20px;
+  padding: 4px 20px;
   margin-top: var(--header-height); /* This should be at least the height of the header */
+  margin-bottom: 30px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -99,7 +100,6 @@ footer {
   width: 100%;
   text-align: center;
   padding: 10px 20px;
-  padding-top: 10px;
   background-color: var(--container-bg-color);
   border-color: var(--border-color);
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
@@ -125,21 +125,29 @@ footer p {
 
 /* Hover effect to give feedback on interaction */
 #themeToggle:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   :root {
-    --header-height: 90px;
+    --header-height: 78px;
   }
 
   body {
     padding-top: var(--header-height); /* Make sure body padding-top is also using this variable */
   }
 
+  main {
+    margin-bottom: 18px;
+  }
+
   header, main, footer {
     padding: 15px 10px; /* Smaller padding for mobile */
+  }
+
+  header h1, header p {
+    padding-bottom: 4px;
   }
 
   #themeToggle:hover {
@@ -148,5 +156,9 @@ footer p {
 
   li {
     padding: 8px;
+  }
+
+  footer {
+    padding: 4px 20px;
   }
 }
