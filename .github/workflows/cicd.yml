@@ -14,6 +14,11 @@ jobs:
 
       - name: Run Cypress tests 🧪
         uses: cypress-io/github-action@v6
+        with:
+          record: true
+          tag: local
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
   deploy:
     needs: pre-deployment-tests
     runs-on: ubuntu-latest
@@ -40,4 +45,6 @@ jobs:
       - name: Run Cypress tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          command: npm run test:prod
+          command: npm run test:prod:cloud
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

@@ -4,8 +4,10 @@
   "description": "Checklist para avaliação de habilidades em desenvolvimento de testes automatizados com Cypress.",
   "scripts": {
     "cy:open": "cypress open",
-    "test": "cypress run",
-    "test:prod": "cypress run --env environment=prod"
+    "cy:open:prod": "cypress open --env environment=prod",
+    "test": "cypress run --record false",
+    "test:prod": "cypress run --env environment=prod --record false",
+    "test:prod:cloud": "cypress run --env environment=prod --record --tag 'prod'"
   },
   "keywords": [
     "cypress",
