@@ -25,7 +25,7 @@ describe('Cypress Skills Checklist', () => {
       cy.get('input[type="checkbox"]')
         .its('length')
         .then(length => {
-          const numOfCheckboxesEquivalentoToLessThanFiftyPercent = (length / 2) - 1
+          const numOfCheckboxesEquivalentoToLessThanFiftyPercent = Math.floor((length * .5) - 1)
           const tempArray = Array(numOfCheckboxesEquivalentoToLessThanFiftyPercent).fill(0)
           tempArray.forEach((_, index) => {
             cy.get('input[type="checkbox"]').eq(index).check()
@@ -39,14 +39,14 @@ describe('Cypress Skills Checklist', () => {
       cy.get('input[type="checkbox"]')
         .its('length')
         .then(length => {
-          const numOfCheckboxesEquivalentoToAtLeastFiftyPercent = length / 2
+          const numOfCheckboxesEquivalentoToAtLeastFiftyPercent = Math.ceil(length * .5)
           const tempArray = Array(numOfCheckboxesEquivalentoToAtLeastFiftyPercent).fill(0)
           tempArray.forEach((_, index) => {
             cy.get('input[type="checkbox"]').eq(index).check()
           })
         })
 
-      cy.contains('footer', '(50%) - Nível: Intermediário (Pleno)').should('be.visible')
+      cy.contains('footer', 'Nível: Intermediário (Pleno)').should('be.visible')
     })
 
     it('checking at least 75% of checkboxes changes the skill to senior level', () => {
