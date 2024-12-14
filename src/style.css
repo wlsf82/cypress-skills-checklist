@@ -1,32 +1,40 @@
 /* Define CSS variables for light and dark themes */
 :root {
-  --background-color: #f4f4f4;
-  --text-color: #333;
-  --secondary-text-color: #666;
-  --container-bg-color: #fff;
-  --border-color: #eee;
-  --accent-color: #1a73e8;
-  --header-height: 88px;
+  --background-color: #f4f7f9;
+  --text-color: #2c3e50;
+  --secondary-text-color: #6c757d;
+  --container-bg-color: #ffffff;
+  --border-color: #e0e4e8;
+  --accent-color: #3498db;
+  --accent-hover-color: #2980b9;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --header-height: 116px;
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
 }
 
 [data-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #fff;
-  --secondary-text-color: #aaa;
-  --container-bg-color: #242424;
-  --border-color: #444;
-  --accent-color: #1a73e8;
+  --background-color: #121c26;
+  --text-color: #e6e6e6;
+  --secondary-text-color: #a0a0a0;
+  --container-bg-color: #1e2b37;
+  --border-color: #2c3e50;
+  --accent-color: #3498db;
+  --accent-hover-color: #2980b9;
+  --shadow-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Overall body styling */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', 'Arial', sans-serif;
   background-color: var(--background-color);
   margin: 0;
   padding: 20px;
   color: var(--text-color);
   padding-top: 70px;
-  padding-bottom: 60px; /* Add bottom padding to body to ensure content is not hidden by the footer */
+  padding-bottom: 60px;
+  line-height: 1.6;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 /* Header styling */
@@ -35,10 +43,10 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Ensure header is above other content */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  background-color: var(--container-bg-color); /* Use variable for background to maintain theme consistency */
-  padding: 20px 0 5px 0; /* Add vertical padding for alignment */
+  z-index: 1000;
+  background-color: var(--container-bg-color);
+  padding: 15px 0;
+  box-shadow: 0 4px 6px var(--shadow-color);
   text-align: center;
 }
 
@@ -51,20 +59,26 @@ header h1, header p {
 
 header h1 {
   color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: -0.5px;
 }
 
 header p {
   color: var(--secondary-text-color);
+  font-size: 0.9rem;
 }
 
 /* Main content area */
 main {
   background-color: var(--container-bg-color);
-  border-color: var(--border-color);
-  padding: 4px 20px;
-  margin-top: var(--header-height); /* This should be at least the height of the header */
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-top: var(--header-height);
   margin-bottom: 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 /* List styles */
@@ -74,10 +88,15 @@ ul {
 }
 
 li {
-  border-bottom: 1px solid #eee;
-  border-bottom-color: var(--border-color);
-  padding: 10px;
-  margin-bottom: 5px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: background-color var(--transition-speed);
+}
+
+li:hover {
+  background-color: rgba(52, 152, 219, 0.05);
 }
 
 /* Checkbox styles */
@@ -92,7 +111,7 @@ label {
   display: block; /* Makes the label more clickable */
 }
 
-/* Footer styling for fixed position */
+/* Footer styling */
 footer {
   position: fixed;
   bottom: 0;
@@ -101,64 +120,60 @@ footer {
   text-align: center;
   padding: 10px 20px;
   background-color: var(--container-bg-color);
-  border-color: var(--border-color);
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-  z-index: 1000; /* Make sure footer stays above all other content */
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 6px var(--shadow-color);
+  z-index: 1000;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 footer p {
   color: var(--secondary-text-color);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
-/* Style for the theme toggle button */
+/* Theme toggle button */
 #themeToggle {
   background: none;
   border: none;
-  color: var(--text-color); /* Use the text color from theme */
-  font-size: 24px; /* Set a suitable font size for visibility */
-  cursor: pointer; /* Cursor changes to pointer to indicate it's clickable */
-  padding: 5px; /* Padding to increase clickable area */
-  margin: 0; /* Remove any default margin */
-  transition: color 0.3s ease; /* Smooth transition for color change */
+  color: var(--text-color);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
-/* Hover effect to give feedback on interaction */
 #themeToggle:hover {
-  transform: scale(1.2);
+  background-color: rgba(52, 152, 219, 0.1);
+  transform: scale(1.1);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   :root {
-    --header-height: 78px;
+    --header-height: 165px;
   }
 
   body {
-    padding-top: var(--header-height); /* Make sure body padding-top is also using this variable */
+    padding-top: var(--header-height);
+    padding: 10px;
   }
 
   main {
-    margin-bottom: 18px;
+    padding: 15px;
+    margin-bottom: 70px;
   }
 
-  header, main, footer {
-    padding: 15px 10px; /* Smaller padding for mobile */
+  header, footer {
+    padding: 10px;
   }
 
-  header h1, header p {
-    padding-bottom: 4px;
+  li {
+    padding: 10px;
   }
 
   #themeToggle:hover {
     transform: none;
-  }
-
-  li {
-    padding: 8px;
-  }
-
-  footer {
-    padding: 4px 20px;
+    background-color: transparent;
   }
 }
