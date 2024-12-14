@@ -51,6 +51,12 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 
 function updateToggleButton(theme) {
   const themeToggle = document.getElementById('themeToggle')
-  themeToggle.textContent = theme === 'dark' ? '☀' : '☽' // Set text as sun for light mode or moon for dark mode
+  const moonIcon = themeToggle.querySelector('.moon')
+  const sunIcon = themeToggle.querySelector('.sun')
+
+  // Show/hide icons based on current theme
+  moonIcon.style.display = theme === 'dark' ? 'none' : 'block'
+  sunIcon.style.display = theme === 'dark' ? 'block' : 'none'
+
   themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Mudar para o tema claro' : 'Mudar para o tema escuro') // Accessibility improvement
 }
