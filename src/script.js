@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateCheckboxCounts() {
     const checkedCount = Array.from(checkboxes).filter(checkbox => checkbox.checked).length
     checkedCountElement.textContent = checkedCount
-    const percentage = (checkedCount / checkboxes.length * 100).toFixed(0)
+    let percentage = (checkedCount / checkboxes.length * 100).toFixed(0)
+
+    if (isNaN(percentage)) {
+      percentage = 0
+    }
+
     percentageElement.textContent = percentage
 
     if (percentage < 50) {
