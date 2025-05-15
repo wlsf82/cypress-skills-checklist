@@ -1,10 +1,10 @@
 describe('Cypress Skills Checklist', () => {
   beforeEach(() => {
-    if (Cypress.env('environment') === 'prod') {
-      cy.visit('https://cypress-skills-checklist.s3.eu-central-1.amazonaws.com/index.html')
-    } else {
-      cy.visit('./src/index.html')
-    }
+    const url = Cypress.env('environment') === 'prod' ?
+      'https://cypress-skills-checklist.s3.eu-central-1.amazonaws.com/index' :
+      './src/index.html'
+    
+    cy.visit(url)
 
     cy.contains('footer', '0 / ').should('be.visible')
     cy.contains('footer', '(0%) - Nível: Iniciante (Jr.)').should('be.visible')
