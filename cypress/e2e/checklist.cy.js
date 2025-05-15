@@ -1,7 +1,7 @@
 describe('Cypress Skills Checklist', () => {
   beforeEach(() => {
     const url = Cypress.env('environment') === 'prod' ?
-      'https://cypress-skills-checklist.s3.eu-central-1.amazonaws.com/index' :
+      'https://cypress-skills-checklist.s3.eu-central-1.amazonaws.com/index.html' :
       './src/index.html'
     
     cy.visit(url)
